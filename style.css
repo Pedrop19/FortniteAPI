@@ -178,3 +178,12 @@ a.article:hover {
         display: none;
     }
 }
+
+.container-footer{
+    font-size: 1em;
+    border: 0;
+    background-color: var(--color3) !important;
+    height: max-content;
+    margin: 0;
+    padding: 0  !important;
+}
