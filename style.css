@@ -9,7 +9,11 @@
     --color4: #DDB1FF;
     --color5: #FBEFFF;
 }
-body {
+
+body{
+    font-family: 'Luckiest Guy', cursive;
+}
+.map {
     font-family: 'Luckiest Guy', cursive;
     background: url(/src/img/bg.png) ;
     background-size: cover;
@@ -261,4 +265,17 @@ dialog p{
     font-weight: 300;
     line-height: 1.7em;
     color: var(--color2);
+}
+
+.imagenfondo{
+    background: url(/src/img/bg2.jpg) ;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    transition: all 0.3s;
+    
 }
