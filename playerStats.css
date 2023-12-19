@@ -1,0 +1,46 @@
+:root{
+    --color1: #2A095F;
+    --color2: #3D02BD;
+    --color3: #E25BFF;
+    --color4: #DDB1FF;
+    --color5: #FBEFFF;
+}
+
+body {
+    background-color: var(--color4);
+
+}
+
+main {
+    margin: 5%;
+}
+
+main p {
+    color: #2A095F;
+}
+
+.hidden {
+    display: none;
+}
+
+#searchButton {
+    background-color: var(--color1);
+    color: var(--color5);
+}
+
+#searchButton:hover {
+    background-color: var(--color2);
+}
+
+#searchContainer {
+    margin-bottom: 5%;
+}
+
+#playerStatsContainer div {
+    margin: 3% 0;
+    border-radius: 5px;
+}
+
+#stats h3 {
+    background-color: var(--color3);
+}
