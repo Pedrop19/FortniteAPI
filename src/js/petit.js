@@ -1,5 +1,3 @@
-
-
 let btn = document.querySelectorAll('.sidebarCollapse');
 let sidebar = document.getElementById('sidebar');
 

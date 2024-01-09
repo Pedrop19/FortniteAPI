@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FortniteAPI</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet" />
+    <!-- MDB -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/7.1.0/mdb.min.css" rel="stylesheet" />
+    <script src="/src/js/petit.js" defer></script>
+    <script src="/src/js/map.js" defer></script>
+    <link rel="stylesheet" href="/src/css/style.css">
+</head>
+
+<body class="p-0 m-0">
+    <div class="wrapper">
+        <nav id="sidebar" class="active">
+            <div class="sidebar-header d-flex justify-content-between">
+                <h3>Fortnite API</h3>
+                <i class="fas fa-times sidebarCollapse"></i>
+            </div>
+
+            <ul class="list-unstyled components text-center p-5">
+                <li>
+                    <a href="#">Home</a>
+                </li>
+                <li>
+                    <a href="#">Cosmetics</a>
+                </li>
+                <li>
+                    <a href="#">Shop</a>
+                </li>
+                <li>
+                    <a href="#">Player Stats</a>
+                </li>
+                <li>
+                    <a href="#">PlayList</a>
+                </li>
+            </ul>
+
+            <ul class="list-unstyled CTAs">
+                <li>
+                    <a type="button" class="download" data-mdb-modal-init data-mdb-target="#iniciarModal">
+                        Sign in
+                    </a>
+                    <div class="modal top fade" id="iniciarModal" tabindex="-1" aria-labelledby="iniciarModalLabel"
+                        aria-hidden="true" data-mdb-backdrop="true" data-mdb-keyboard="true">
+                        <div class="modal-dialog   modal-dialog-centered">
+                            <div class="modal-content" style="background: #3d02bdd3; color:black;">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="iniciarModalLabel">Sign in</h5>
+                                    <button type="button" class="btn-close" data-mdb-dismiss="modal"
+                                        aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <div class="mb-3">
+                                        <div data-mdb-input-init class="form-outline mb-4">
+                                            <input type="text" class="input-box form-control" name="email" />
+                                            <label class="form-label text-white" for="form3Example3">Email</label>
+                                        </div>
+                                        <div data-mdb-input-init class="form-outline mb-4">
+                                            <input type="password" class="input-box form-control" name="password" />
+                                            <label class="form-label text-white"
+                                                for="form3Example3">Password</label>
+                                        </div>
+                                    </div>
+                                    <p class="text-center">&iquest; Don't have account?<button type="submit"
+                                            class="bg-transparent border-0 text-info" name="button" data-mdb-modal-init data-mdb-target="#registrarModal"
+                                            value="registrar">Register</button></p>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="submit" class="btn btn-danger" data-mdb-dismiss="modal"
+                                        name="button" value="cancelar">
+                                        Cancel
+                                    </button>
+                                    <button type="submit" class="btn btn-light text-bg-light" name="button"
+                                        value="aceptar">Sign in</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <a href="register.html" class="download" data-mdb-modal-init data-mdb-target="#registrarModal">Register</a>
+                    <div class="modal top fade" id="registrarModal" tabindex="-1" aria-labelledby="registrarModalLabel"
+                        aria-hidden="true" data-mdb-backdrop="true" data-mdb-keyboard="true">
+                        <div class="modal-dialog   modal-dialog-centered">
+                            <div class="modal-content" style="background: #3d02bdd3; color:black;">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="registrarModalLabel">Register</h5>
+                                    <button type="button" class="btn-close" data-mdb-dismiss="modal"
+                                        aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <div class="mb-3">
+                                        <div data-mdb-input-init class="form-outline mb-4">
+                                            <input type="text" class="input-box form-control"/>
+                                            <label class="form-label text-white" for="form3Example3">Name</label>
+                                        </div>
+                                        <div data-mdb-input-init class="form-outline mb-4">
+                                            <input type="text" class="input-box form-control"/>
+                                            <label class="form-label text-white"
+                                                for="form3Example3">LastName</label>
+                                        </div>
+                                        <div data-mdb-input-init class="form-outline mb-4">
+                                            <input type="text" class="input-box form-control"/>
+                                            <label class="form-label text-white"
+                                                for="form3Example3">Email</label>
+                                        </div>
+                                        <div data-mdb-input-init class="form-outline mb-4">
+                                            <input type="password" class="input-box form-control"/>
+                                            <label class="form-label text-white"
+                                                for="form3Example3">Password</label>
+                                        </div>
+                                        <div data-mdb-input-init class="form-outline mb-4">
+                                            <input type="pasword" class="input-box form-control"/>
+                                            <label class="form-label text-white"
+                                                for="form3Example3">Repeat Password</label>
+                                        </div>
+                                    </div>
+                                    <p class="text-center">&iquest; Have account?<button type="submit"
+                                            class="bg-transparent border-0 text-info" name="button" data-mdb-modal-init data-mdb-target="#iniciarModal"
+                                            value="registrar">Login</button></p>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="submit" class="btn btn-danger" data-mdb-dismiss="modal"
+                                        name="button" value="cancelar">
+                                        Cancel
+                                    </button>
+                                    <button type="submit" class="btn btn-light text-bg-light" name="button"
+                                        value="aceptar">Register</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </nav>
+        <div id="content" class="p-0">
+            <nav class="navbar navbar-expand-lg m-0 p-2">
+                <div class="container-fluid row">
+                    <div class="aside m-0 col-7">
+                        <button type="button" class="btn navbar-btn sidebarCollapse">
+                            <img src="/src/img/Fortnite_F.webp" alt="" width="40">
+                        </button>
+                    </div>
+                    <div class="col-1">
+                    </div>
+                    <div class="collapse navbar-collapse col-1" id="navbarSupportedContent">
+                        <ul class="nav navbar-nav ml-auto">
+                            <li class="nav-item active">
+                                <a class="nav-link" href="#">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Cosmetics</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Shop</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Player Stats</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">PlayList</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+
+            <div class="imagen d-flex flex-column  justify-content-center align-items-center ">
+                <h1 class="text-center ">Map</h1>
+                <img src="/src/img/map.png" class="img-fluid rounded-top imag" alt="" width="40%" />
+                <div class="info">
+                    <h1 class="text-center">Places</h1>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <footer class="bg-body-tertiary text-center text-lg-start container-footer">
+        <div class="text-center p-3 d-flex justify-content-between " style="background-color: rgba(0, 0, 0, 0.05);">
+            <div class="copyright">
+                <p class="text-body p-0 m-0">© 2023 Copyright: FortnitePCPM</p>
+            </div>
+            <div class="iconos p-0">
+                <i class="fa-brands fa-facebook mx-1"></i>
+                <i class="fa-brands fa-square-x-twitter mx-1"></i>
+                <i class="fa-brands fa-square-instagram mx-1"></i>
+            </div>
+        </div>
+    </footer>
+    <script type="text/javascript"
+    src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/7.1.0/mdb.umd.min.js"></script>
+</body>
+
+</html>
