@@ -4,7 +4,6 @@ const apiKey = '27e7cbc4-05e3-4e65-90a3-af534dab3ead';
 const searchButton = document.getElementById('searchButton');
 const playerStatsContainerElement = document.getElementById('playerStatsContainer');
 const playerNameInput = document.getElementById('playerInput');
-const playerImageElement = document.getElementById('playerImage');
 
 const playerNameElement = document.getElementById('playerName');
 const playerLevelElement = document.getElementById('playerLevel');
@@ -74,7 +73,6 @@ async function getFortnitePlayerStats(playerName, apiKey) {
 // Displays the player statistics
 function displayPlayerStats(data) {
     console.log(data);
-    // playerImageElement.;
     playerNameElement.textContent = `${data.data.account.name}`;
     playerLevelElement.textContent = `${data.data.battlePass.level}`;
     playerMatchesElement.textContent = `${data.data.stats.all.overall.matches}`;

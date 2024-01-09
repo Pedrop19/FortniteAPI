@@ -95,105 +95,102 @@
                 <div class="col-4 container-fluid text-center" id="searchContainer">
                     <label for="playerInput" class="form-label">Search Player</label>
                     <input type="text" class="form-control mx-2" aria-describedby="helpId" placeholder="Id or Name"
-                        id="playerInput"/>
+                        id="playerInput" />
                     <button class="btn" id="searchButton">Search</button>
                 </div>
                 <div id="playerStatsContainer" class="hidden container col-12 text-center">
                     <div class="row">
-                        <div class="col-3">
-                            <img id="playerImage">
-                        </div>
-                        <div class="col-3">
+                        <div class="col-4">
                             <h2>Name</h2>
                             <h4 id="playerName"></h4>
                         </div>
-                        <div class="col-3">
+                        <div class="col-4">
                             <h2>Level</h2>
                             <h4 id="playerLevel"></h4>
                         </div>
-                        <div class="col-3">
+                        <div class="col-4">
                             <h2>Matches Played</h2>
                             <h4 id="playerMatches"></h4>
                         </div>
                     </div>
                     <div id="stats">
-                    <div class="row" style="background-color: #FBEFFF;">
-                        <h3>Summary Statistics</h3>
-                        <div class="col-3">
-                            <h4>Wins</h4>
-                            <p id="summaryWins"></p>
+                        <div class="row" style="background-color: #FBEFFF;">
+                            <h3 class="p-2">Summary Statistics</h3>
+                            <div class="col-3">
+                                <h4>Wins</h4>
+                                <p id="summaryWins"></p>
+                            </div>
+                            <div class="col-3">
+                                <h4>Win Rate</h4>
+                                <p id="summaryWinRate"></p>
+                            </div>
+                            <div class="col-3">
+                                <h4>Kills</h4>
+                                <p id="summaryKills"></p>
+                            </div>
+                            <div class="col-3">
+                                <h4>K/D</h4>
+                                <p id="summaryKD"></p>
+                            </div>
                         </div>
-                        <div class="col-3">
-                            <h4>Win Rate</h4>
-                            <p id="summaryWinRate"></p>
+                        <div class="row" style="background-color: #FBEFFF;">
+                            <h3 class="p-2">Solo</h3>
+                            <div class="col-3">
+                                <h4>Wins</h4>
+                                <p id="soloWins"></p>
+                            </div>
+                            <div class="col-3">
+                                <h4>Win Rate</h4>
+                                <p id="soloWinRate"></p>
+                            </div>
+                            <div class="col-3">
+                                <h4>Kills</h4>
+                                <p id="soloKills"></p>
+                            </div>
+                            <div class="col-3">
+                                <h4>K/D</h4>
+                                <p id="soloKD"></p>
+                            </div>
                         </div>
-                        <div class="col-3">
-                            <h4>Kills</h4>
-                            <p id="summaryKills"></p>
+                        <div class="row" style="background-color: #FBEFFF;">
+                            <h3 class="p-2">Duo</h3>
+                            <div class="col-3">
+                                <h4>Wins</h4>
+                                <p id="duoWins"></p>
+                            </div>
+                            <div class="col-3">
+                                <h4>Win Rate</h4>
+                                <p id="duoWinRate"></p>
+                            </div>
+                            <div class="col-3">
+                                <h4>Kills</h4>
+                                <p id="duoKills"></p>
+                            </div>
+                            <div class="col-3">
+                                <h4>K/D</h4>
+                                <p id="duoKD"></p>
+                            </div>
                         </div>
-                        <div class="col-3">
-                            <h4>K/D</h4>
-                            <p id="summaryKD"></p>
+                        <div class="row" style="background-color: #FBEFFF;">
+                            <h3 class="p-2">Squad</h3>
+                            <div class="col-3">
+                                <h4>Wins</h4>
+                                <p id="squadWins"></p>
+                            </div>
+                            <div class="col-3">
+                                <h4>Win Rate</h4>
+                                <p id="squadWinRate"></p>
+                            </div>
+                            <div class="col-3">
+                                <h4>Kills</h4>
+                                <p id="squadKills"></p>
+                            </div>
+                            <div class="col-3">
+                                <h4>K/D</h4>
+                                <p id="squadKD"></p>
+                            </div>
                         </div>
                     </div>
-                    <div class="row" style="background-color: #FBEFFF;">
-                        <h3>Solo</h3>
-                        <div class="col-3">
-                            <h4>Wins</h4>
-                            <p id="soloWins"></p>
-                        </div>
-                        <div class="col-3">
-                            <h4>Win Rate</h4>
-                            <p id="soloWinRate"></p>
-                        </div>
-                        <div class="col-3">
-                            <h4>Kills</h4>
-                            <p id="soloKills"></p>
-                        </div>
-                        <div class="col-3">
-                            <h4>K/D</h4>
-                            <p id="soloKD"></p>
-                        </div>
-                    </div>
-                    <div class="row" style="background-color: #FBEFFF;">
-                        <h3>Duo</h3>
-                        <div class="col-3">
-                            <h4>Wins</h4>
-                            <p id="duoWins"></p>
-                        </div>
-                        <div class="col-3">
-                            <h4>Win Rate</h4>
-                            <p id="duoWinRate"></p>
-                        </div>
-                        <div class="col-3">
-                            <h4>Kills</h4>
-                            <p id="duoKills"></p>
-                        </div>
-                        <div class="col-3">
-                            <h4>K/D</h4>
-                            <p id="duoKD"></p>
-                        </div>
-                    </div>
-                    <div class="row" style="background-color: #FBEFFF;">
-                        <h3>Squad</h3>
-                        <div class="col-3">
-                            <h4>Wins</h4>
-                            <p id="squadWins"></p>
-                        </div>
-                        <div class="col-3">
-                            <h4>Win Rate</h4>
-                            <p id="squadWinRate"></p>
-                        </div>
-                        <div class="col-3">
-                            <h4>Kills</h4>
-                            <p id="squadKills"></p>
-                        </div>
-                        <div class="col-3">
-                            <h4>K/D</h4>
-                            <p id="squadKD"></p>
-                        </div>
-                    </div>
-                </div>
                 </div>
             </main>
 
