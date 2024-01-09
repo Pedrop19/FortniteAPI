@@ -16,11 +16,15 @@ main {
 }
 
 main p {
-    color: #2A095F;
+    color: var(--color1);
 }
 
 .hidden {
     display: none;
+}
+
+#playerInput {
+    margin: 5%;
 }
 
 #searchButton {
@@ -34,6 +38,10 @@ main p {
 
 #searchContainer {
     margin-bottom: 5%;
+}
+
+#searchContainer label {
+    font-size: 25px;
 }
 
 #playerStatsContainer div {

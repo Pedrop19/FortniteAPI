@@ -4,9 +4,11 @@ const apiKey = '27e7cbc4-05e3-4e65-90a3-af534dab3ead';
 const searchButton = document.getElementById('searchButton');
 const playerStatsContainerElement = document.getElementById('playerStatsContainer');
 const playerNameInput = document.getElementById('playerInput');
+const playerImageElement = document.getElementById('playerImage');
 
 const playerNameElement = document.getElementById('playerName');
 const playerLevelElement = document.getElementById('playerLevel');
+const playerMatchesElement = document.getElementById('playerMatches');
 
 const summaryWinsElement = document.getElementById('summaryWins');
 const summaryWinRateElement = document.getElementById('summaryWinRate');
@@ -28,7 +30,7 @@ const squadWinRateElement = document.getElementById('squadWinRate');
 const squadKillsElement = document.getElementById('squadKills');
 const squadKDElement = document.getElementById('squadKD');
 
-
+// Looks for a player name given by the user in the API
 searchButton.addEventListener('click', function () {
     const playerName = playerNameInput.value.trim();
 
@@ -36,16 +38,19 @@ searchButton.addEventListener('click', function () {
         getFortnitePlayerStats(playerName, apiKey);
         playerStatsContainerElement.classList.remove('hidden');
     } else {
-        console.error('Ingresa un nombre de jugador válido');
+        console.error('Please, enter a valid player name.');
     }
 });
 
+// Adds an event listener to make enter key do the same function as clicking on search button
 playerNameInput.addEventListener('keydown', function (event) {
     if (event.key === 'Enter') {
         searchButton.click(); 
     }
 });
 
+
+// Obtains the player stats from the API
 async function getFortnitePlayerStats(playerName, apiKey) {
     try {
         const response = await fetch(`${API}${playerName}`, {
@@ -58,17 +63,21 @@ async function getFortnitePlayerStats(playerName, apiKey) {
             const data = await response.json();
             displayPlayerStats(data);
         } else {
-            throw new Error(`Error de red: ${response.statusText}`);
+            throw new Error(`Network error: ${response.statusText}`);
         }
     } catch (error) {
-        console.error('Error en la solicitud:', error.message);
+        console.error('Request error:', error.message);
     }
 }
 
+
+// Displays the player statistics
 function displayPlayerStats(data) {
     console.log(data);
+    // playerImageElement.;
     playerNameElement.textContent = `${data.data.account.name}`;
     playerLevelElement.textContent = `${data.data.battlePass.level}`;
+    playerMatchesElement.textContent = `${data.data.stats.all.overall.matches}`;
 
     summaryWinsElement.textContent = `${data.data.stats.all.overall.wins}`;
     summaryWinRateElement.textContent = `${data.data.stats.all.overall.winRate}`;

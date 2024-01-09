@@ -32,13 +32,7 @@
             </div>
 
             <ul class="list-unstyled components text-center p-5">
-                <li>
-                    <div class="mb-3">
-                        <label for="" class="form-label">Search Player</label>
-                        <input type="text" class="form-control mx-2" aria-describedby="helpId"
-                            placeholder="Id or Name" />
-                    </div>
-                </li>
+
                 <li>
                     <a href="#">Home</a>
                 </li>
@@ -101,18 +95,25 @@
                 <div class="col-4 container-fluid text-center" id="searchContainer">
                     <label for="playerInput" class="form-label">Search Player</label>
                     <input type="text" class="form-control mx-2" aria-describedby="helpId" placeholder="Id or Name"
-                        id="playerInput" />
+                        id="playerInput"/>
                     <button class="btn" id="searchButton">Search</button>
                 </div>
                 <div id="playerStatsContainer" class="hidden container col-12 text-center">
                     <div class="row">
-                        <div class="col-6">
+                        <div class="col-3">
+                            <img id="playerImage">
+                        </div>
+                        <div class="col-3">
                             <h2>Name</h2>
                             <h4 id="playerName"></h4>
                         </div>
-                        <div class="col-6">
+                        <div class="col-3">
                             <h2>Level</h2>
                             <h4 id="playerLevel"></h4>
+                        </div>
+                        <div class="col-3">
+                            <h2>Matches Played</h2>
+                            <h4 id="playerMatches"></h4>
                         </div>
                     </div>
                     <div id="stats">
