@@ -1,7 +1,9 @@
 let paginaActual = 1;
-const elementosPorPagina = 28;
+const elementosPorPagina = 20;
 const pagination = document.getElementById("pagination");
 let skins = [];
+let tipoFiltradoActual = "all";
+const searchBar = document.createElement("input");
 
 async function getCosmetics() {
     const url = `https://fortnite-api.com/v2/cosmetics/br`;
@@ -26,17 +28,19 @@ async function getCosmetics() {
 }
 
 function mostrarElementos(skins, pagina) {
-    // Clear existing elements
     const skinsContainer = document.getElementById('skins');
     skinsContainer.innerHTML = "";
 
+    // Filtrar las skins por tipo
+    const filteredSkins = skins.filter(skin => tipoFiltradoActual === "all" || skin.type.value === tipoFiltradoActual);
+
     // Calculate start and end indices for the current page
     const startIndex = (pagina - 1) * elementosPorPagina;
-    const endIndex = startIndex + elementosPorPagina;
+    const endIndex = Math.min(startIndex + elementosPorPagina, filteredSkins.length);
 
     // Display elements for the current page
-    for (let i = startIndex; i < endIndex && i < skins.length; i++) {
-        const skin = skins[i];
+    for (let i = startIndex; i < endIndex; i++) {
+        const skin = filteredSkins[i];
         const skinCard = document.createElement('div');
         skinCard.classList.add('skin-card');
 
@@ -171,23 +175,38 @@ function createFilterDropdown() {
 
     // Agregar evento de cambio para el filtrado
     filterDropdown.addEventListener("change", function () {
-        const selectedType = filterDropdown.value;
-        if (selectedType === "all") {
-            // Mostrar todas las skins si se selecciona "Todos"
-            mostrarElementos(skins, paginaActual);
-        } else {
-            // Filtrar y mostrar solo las skins del tipo seleccionado
-            const filteredSkins = skins.filter(skin => skin.type.value === selectedType);
-            mostrarElementos(filteredSkins, 1);
-            // Recalcular la paginación para las skins filtradas
-            createPaginationLinks(Math.ceil(filteredSkins.length / elementosPorPagina));
-        }
+        // Actualizar la variable del tipo de filtrado actual
+        tipoFiltradoActual = filterDropdown.value;
+        // Actualizar la paginación y mostrar las skins según el tipo seleccionado
+        paginaActual = 1; // Restablecer la página a 1 al cambiar el tipo de filtrado
+        mostrarElementos(skins, paginaActual);
+        createPaginationLinks(Math.ceil(skins.length / elementosPorPagina));
     });
 
     // Agregar el elemento 'select' al contenedor deseado en el DOM
     const filterContainer = document.getElementById("filter-container");
     filterContainer.appendChild(filterDropdown);
 }
+
+//Funcion que filtra por busqueda las skins por nombre
+function filtrarPorNombre() {
+    const filtro = searchBar.value.toLowerCase();
+    const filteredSkins = skins.filter(skin => skin.name.toLowerCase().includes(filtro));
+    mostrarElementos(filteredSkins, 1);
+    createPaginationLinks(Math.ceil(filteredSkins.length / elementosPorPagina));
+}
+
+// Create the search bar
+function createSearchBar() {
+    searchBar.type = "text";
+    searchBar.placeholder = "Buscar...";
+    searchBar.addEventListener("input", filtrarPorNombre);
+
+    const filterContainer = document.getElementById("filter-container");
+    filterContainer.appendChild(searchBar);
+}
+
+createSearchBar();
 
 // Llama a la función para crear el filtro por tipo
 createFilterDropdown();

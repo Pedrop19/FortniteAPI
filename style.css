@@ -287,3 +287,15 @@ a.article:hover {
     border-radius: 5px;
     margin-bottom: 10px;
 }
+
+#filter-container input {
+    background-color: #ffffff;
+    color: #f3f3f3;
+    padding: 8px 16px;
+    text-decoration: none;
+    transition: background-color .3s;
+    border: 1px solid #424242;
+    margin: 0 4px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
