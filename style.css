@@ -11,7 +11,7 @@
 }
 body {
     font-family: 'Luckiest Guy', cursive;
-    background: #fafafa;
+    overflow-x: hidden;
 }
 
 p {
@@ -186,4 +186,104 @@ a.article:hover {
     height: max-content;
     margin: 0;
     padding: 0  !important;
+}
+
+.cosmetics {
+    background-image: url(src/img/background.png);
+    backdrop-filter: blur(10px);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+#skins { 
+    backdrop-filter: blur(10px);
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+    padding: 10px;
+}
+
+.skin-card {
+    box-shadow: #a0a0a0 0px 4px 12px;
+    background-color: #fcfcfc;
+    border: 1px solid #a830bd;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    padding: 10px;
+    margin-top: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    transition: 1s;
+}
+
+.skin-card p {
+    color: black;
+    text-align: center;
+}
+
+.skin-card:hover {
+    transform: scale(1.05);
+}
+
+.skin-image {
+    max-width: 200px;
+    max-height: 200px;
+}
+
+#pagination {
+    backdrop-filter: blur(10px);
+    display: flex;
+    list-style: none;
+    padding: 0;
+    justify-content: center;
+}
+
+#pagination a {
+    background-color: #d900ff;
+    color: #f3f3f3;
+    padding: 8px 16px;
+    text-decoration: none;
+    transition: background-color .3s;
+    border: 1px solid #424242;
+    margin: 0 4px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+#pagination a.active {
+    background-color: var(--color1);
+    color: white;
+    border: 1px solid #0f0f0f;
+}
+
+#pagination a:hover:not(.active) {
+    background-color: var(--color1);
+}
+
+#filter-container {
+    backdrop-filter: blur(10px);
+    color: #f3f3f3;
+    padding: 8px 16px;
+    text-decoration: none;
+    transition: background-color .3s;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#filter-container select {
+    background-color: #d900ff;
+    color: #f3f3f3;
+    padding: 8px 16px;
+    text-decoration: none;
+    transition: background-color .3s;
+    border: 1px solid #424242;
+    margin: 0 4px;
+    border-radius: 5px;
+    margin-bottom: 10px;
 }
