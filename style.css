@@ -189,6 +189,7 @@ a.article:hover {
 }
 
 .cosmetics {
+    color: black;
     background-image: url(src/img/background.png);
     backdrop-filter: blur(10px);
     background-position: center;
@@ -277,8 +278,8 @@ a.article:hover {
 }
 
 #filter-container select {
-    background-color: #d900ff;
-    color: #f3f3f3;
+    background-color: #e658ff;
+    color: #181818;
     padding: 8px 16px;
     text-decoration: none;
     transition: background-color .3s;
@@ -290,7 +291,7 @@ a.article:hover {
 
 #filter-container input {
     background-color: #ffffff;
-    color: #f3f3f3;
+    color: #000000;
     padding: 8px 16px;
     text-decoration: none;
     transition: background-color .3s;
