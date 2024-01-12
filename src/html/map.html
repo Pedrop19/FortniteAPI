@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FortniteAPI</title>
+    <!-- Font Awesome -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet" />
@@ -12,11 +13,13 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/7.1.0/mdb.min.css" rel="stylesheet" />
     <script src="/src/js/petit.js" defer></script>
     <script src="/src/js/map.js" defer></script>
+    <script src="/src/js/indexedDB.js" defer></script>
+    <script src="/src/js/sesion.js" defer></script>
     <link rel="stylesheet" href="/src/css/style.css">
 </head>
 
 <body class="p-0 m-0">
-    <div class="wrapper">
+    <div class="wrapper map">
         <nav id="sidebar" class="active">
             <div class="sidebar-header d-flex justify-content-between">
                 <h3>Fortnite API</h3>
@@ -42,101 +45,108 @@
             </ul>
 
             <ul class="list-unstyled CTAs">
-                <li>
-                    <a type="button" class="download" data-mdb-modal-init data-mdb-target="#iniciarModal">
-                        Sign in
-                    </a>
-                    <div class="modal top fade" id="iniciarModal" tabindex="-1" aria-labelledby="iniciarModalLabel"
-                        aria-hidden="true" data-mdb-backdrop="true" data-mdb-keyboard="true">
-                        <div class="modal-dialog   modal-dialog-centered">
-                            <div class="modal-content" style="background: #3d02bdd3; color:black;">
-                                <div class="modal-header">
-                                    <h5 class="modal-title" id="iniciarModalLabel">Sign in</h5>
-                                    <button type="button" class="btn-close" data-mdb-dismiss="modal"
-                                        aria-label="Close"></button>
-                                </div>
-                                <div class="modal-body">
-                                    <div class="mb-3">
-                                        <div data-mdb-input-init class="form-outline mb-4">
-                                            <input type="text" class="input-box form-control" name="email" />
-                                            <label class="form-label text-white" for="form3Example3">Email</label>
-                                        </div>
-                                        <div data-mdb-input-init class="form-outline mb-4">
-                                            <input type="password" class="input-box form-control" name="password" />
-                                            <label class="form-label text-white"
-                                                for="form3Example3">Password</label>
-                                        </div>
+                <div class="botonesSesion">
+                    <li>
+                        <a type="button" class="download" data-mdb-modal-init data-mdb-target="#iniciarModal">
+                            Sign in
+                        </a>
+                        <div class="modal top fade" id="iniciarModal" tabindex="-1" aria-labelledby="iniciarModalLabel"
+                            aria-hidden="true" data-mdb-backdrop="true" data-mdb-keyboard="true">
+                            <div class="modal-dialog   modal-dialog-centered">
+                                <div class="modal-content" style="background: #2a095f96; color:black;">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="iniciarModalLabel">Sign in</h5>
+                                        <button type="button" class="btn-close" data-mdb-dismiss="modal"
+                                            aria-label="Close"></button>
                                     </div>
-                                    <p class="text-center">&iquest; Don't have account?<button type="submit"
-                                            class="bg-transparent border-0 text-info" name="button" data-mdb-modal-init data-mdb-target="#registrarModal"
-                                            value="registrar">Register</button></p>
-                                </div>
-                                <div class="modal-footer">
-                                    <button type="submit" class="btn btn-danger" data-mdb-dismiss="modal"
-                                        name="button" value="cancelar">
-                                        Cancel
-                                    </button>
-                                    <button type="submit" class="btn btn-light text-bg-light" name="button"
-                                        value="aceptar">Sign in</button>
+                                    <div class="modal-body">
+                                        <div class="mb-3">
+                                            <div data-mdb-input-init class="form-outline mb-4">
+                                                <input type="text" id="emailLogin" class="input-box form-control" name="email" />
+                                                <label class="form-label text-white"  for="form3Example3">Email</label>
+                                            </div>
+                                            <div data-mdb-input-init class="form-outline mb-4">
+                                                <input type="password" id="passwordLogin" class="input-box form-control" name="password" />
+                                                <label class="form-label text-white"
+                                                    for="form3Example3">Password</label>
+                                            </div>
+                                        </div>
+                                        <p class="text-center">&iquest; Don't have account?<button type="button"
+                                                class="bg-transparent border-0 text-info" name="button" data-mdb-modal-init data-mdb-target="#registrarModal"
+                                                value="registrar">Register</button></p>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-mdb-dismiss="modal"
+                                            name="button" value="cancelar">
+                                            Cancel
+                                        </button>
+                                        <button type="button" class="btn btn-dark btn-logear" name="button"
+                                            value="aceptar">Sign in</button>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                </li>
-                <li>
-                    <a href="register.html" class="download" data-mdb-modal-init data-mdb-target="#registrarModal">Register</a>
-                    <div class="modal top fade" id="registrarModal" tabindex="-1" aria-labelledby="registrarModalLabel"
-                        aria-hidden="true" data-mdb-backdrop="true" data-mdb-keyboard="true">
-                        <div class="modal-dialog   modal-dialog-centered">
-                            <div class="modal-content" style="background: #3d02bdd3; color:black;">
-                                <div class="modal-header">
-                                    <h5 class="modal-title" id="registrarModalLabel">Register</h5>
-                                    <button type="button" class="btn-close" data-mdb-dismiss="modal"
-                                        aria-label="Close"></button>
-                                </div>
-                                <div class="modal-body">
-                                    <div class="mb-3">
-                                        <div data-mdb-input-init class="form-outline mb-4">
-                                            <input type="text" class="input-box form-control"/>
-                                            <label class="form-label text-white" for="form3Example3">Name</label>
-                                        </div>
-                                        <div data-mdb-input-init class="form-outline mb-4">
-                                            <input type="text" class="input-box form-control"/>
-                                            <label class="form-label text-white"
-                                                for="form3Example3">LastName</label>
-                                        </div>
-                                        <div data-mdb-input-init class="form-outline mb-4">
-                                            <input type="text" class="input-box form-control"/>
-                                            <label class="form-label text-white"
-                                                for="form3Example3">Email</label>
-                                        </div>
-                                        <div data-mdb-input-init class="form-outline mb-4">
-                                            <input type="password" class="input-box form-control"/>
-                                            <label class="form-label text-white"
-                                                for="form3Example3">Password</label>
-                                        </div>
-                                        <div data-mdb-input-init class="form-outline mb-4">
-                                            <input type="pasword" class="input-box form-control"/>
-                                            <label class="form-label text-white"
-                                                for="form3Example3">Repeat Password</label>
-                                        </div>
+                    </li>
+                    <li>
+                        <a href="register.html" class="download" data-mdb-modal-init data-mdb-target="#registrarModal">Register</a>
+                        <div class="modal top fade" id="registrarModal" tabindex="-1" aria-labelledby="registrarModalLabel"
+                            aria-hidden="true" data-mdb-backdrop="true" data-mdb-keyboard="true">
+                            <div class="modal-dialog   modal-dialog-centered">
+                                <div class="modal-content" style="background: #2a095f96; color:black;">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="registrarModalLabel">Register</h5>
+                                        <button type="button" class="btn-close" data-mdb-dismiss="modal"
+                                            aria-label="Close"></button>
                                     </div>
-                                    <p class="text-center">&iquest; Have account?<button type="submit"
-                                            class="bg-transparent border-0 text-info" name="button" data-mdb-modal-init data-mdb-target="#iniciarModal"
-                                            value="registrar">Login</button></p>
-                                </div>
-                                <div class="modal-footer">
-                                    <button type="submit" class="btn btn-danger" data-mdb-dismiss="modal"
-                                        name="button" value="cancelar">
-                                        Cancel
-                                    </button>
-                                    <button type="submit" class="btn btn-light text-bg-light" name="button"
-                                        value="aceptar">Register</button>
+                                    <div class="modal-body">
+                                        <div class="mb-3">
+                                            <div data-mdb-input-init class="form-outline mb-4">
+                                                <input type="text" id="nombre" class="input-box form-control"/>
+                                                <label class="form-label text-white"  for="form3Example3">Name</label>
+                                            </div>
+                                            <div data-mdb-input-init class="form-outline mb-4">
+                                                <input type="text" id="user" class="input-box form-control"/>
+                                                <label class="form-label text-white"
+                                                    for="form3Example3">Username</label>
+                                            </div>
+                                            <div data-mdb-input-init class="form-outline mb-4">
+                                                <input type="text" id="email" class="input-box form-control"/>
+                                                <label class="form-label text-white"
+                                                    for="form3Example3">Email</label>
+                                            </div>
+                                            <div data-mdb-input-init class="form-outline mb-4">
+                                                <input type="password" id="password" class="input-box form-control"/>
+                                                <label class="form-label text-white"
+                                                    for="form3Example3">Password</label>
+                                            </div>
+                                            <div data-mdb-input-init class="form-outline mb-4">
+                                                <input type="pasword" id="password2" class="input-box form-control"/>
+                                                <label class="form-label text-white"
+                                                    for="form3Example3">Repeat Password</label>
+                                            </div>
+                                        </div>
+                                        <p class="text-center">&iquest; Have account?<button type="button"
+                                                class="bg-transparent border-0 text-info" name="button" data-mdb-modal-init data-mdb-target="#iniciarModal"
+                                                value="registrar">Login</button></p>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-mdb-dismiss="modal"
+                                            name="button" value="cancelar">
+                                            Cancel
+                                        </button>
+                                        <button type="button" class="btn btn-dark btn-registrar" name="button"
+                                            value="aceptar">Register</button>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                </li>
+                    </li>
+                </div>
+                <div class="botonesPerfil d-none">
+                    <li>
+                        <a  class="download btn-logout">Log out</a>
+                    </li>
+                </div>
             </ul>
         </nav>
         <div id="content" class="p-0">
@@ -170,7 +180,6 @@
                     </div>
                 </div>
             </nav>
-
             <div class="imagen d-flex flex-column  justify-content-center align-items-center ">
                 <h1 class="text-center ">Map</h1>
                 <img src="/src/img/map.png" class="img-fluid rounded-top imag" alt="" width="40%" />
@@ -178,7 +187,6 @@
                     <h1 class="text-center">Places</h1>
                 </div>
             </div>
-
         </div>
     </div>
 
@@ -195,7 +203,7 @@
         </div>
     </footer>
     <script type="text/javascript"
-    src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/7.1.0/mdb.umd.min.js"></script>
+        src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/7.1.0/mdb.umd.min.js"></script>
 </body>
 
 </html>
