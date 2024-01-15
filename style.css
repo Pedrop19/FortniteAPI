@@ -270,7 +270,6 @@ a.article:hover {
     color: #f3f3f3;
     padding: 8px 16px;
     text-decoration: none;
-    transition: background-color .3s;
     border-radius: 5px;
     display: flex;
     justify-content: center;
@@ -282,7 +281,6 @@ a.article:hover {
     color: #181818;
     padding: 8px 16px;
     text-decoration: none;
-    transition: background-color .3s;
     border: 1px solid #424242;
     margin: 0 4px;
     border-radius: 5px;
@@ -299,4 +297,45 @@ a.article:hover {
     margin: 0 4px;
     border-radius: 5px;
     margin-bottom: 10px;
+}
+
+#tienda {
+    backdrop-filter: blur(10px);
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+    padding: 10px;
+}
+
+.item-card {
+    box-shadow: #a0a0a0 0px 4px 12px;
+    background-color: #fcfcfc;
+    border: 1px solid #a830bd;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    padding: 10px;
+    margin-top: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    transition: 1s;
+}
+
+.item-card p {
+    color: black;
+    text-align: center;
+}
+
+.item-card:hover {
+    transform: scale(1.05);
+}
+
+img {
+    max-width: 150px;
+    max-height: 150px;
+}
+
+.container-itemShop {
+    backdrop-filter: blur(10px);
 }
