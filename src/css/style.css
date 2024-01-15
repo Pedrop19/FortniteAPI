@@ -15,7 +15,7 @@ body{
 }
 .map {
     font-family: 'Luckiest Guy', cursive;
-    background: url(/src/img/bg.png) ;
+    background: url(../img/bg.png) ;
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
@@ -268,7 +268,7 @@ dialog p{
 }
 
 .imagenfondo{
-    background: url(/src/img/bg2.jpg) ;
+    background: url(../img/bg2.jpg) ;
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
@@ -377,7 +377,7 @@ dialog p{
 
 .cosmetics {
     color: black;
-    background-image: url(/src/img/background.png);
+    background-image: url(../img/background.png);
     backdrop-filter: blur(10px);
     background-position: center;
     background-repeat: no-repeat;
