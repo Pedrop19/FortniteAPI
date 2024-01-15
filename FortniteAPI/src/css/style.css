@@ -1,0 +1,532 @@
+
+@import "https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700";
+@import url('https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap');
+
+:root{
+    --color1: #2A095F;
+    --color2: #3D02BD;
+    --color3: #E25BFF;
+    --color4: #DDB1FF;
+    --color5: #FBEFFF;
+}
+
+body{
+    font-family: 'Luckiest Guy', cursive;
+}
+.map {
+    font-family: 'Luckiest Guy', cursive;
+    background: url(/src/img/bg.png) ;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    transition: all 0.3s;
+}
+
+p {
+    font-family: 'Luckiest Guy', cursive;
+    font-size: 1.1em;
+    font-weight: 300;
+    line-height: 1.7em;
+    color: #999;
+}
+
+a,
+a:hover,
+a:focus {
+    color: inherit;
+    text-decoration: none;
+    transition: all 0.3s;
+}
+
+.navbar {
+    padding: 15px 10px;
+    background: #fff;
+    border: none;
+    border-radius: 0;
+    margin-bottom: 40px;
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+    background-color: var(--color1);
+}
+
+.navbar a:hover, .navbar a:focus {
+    background-color: var(--color2);
+}
+
+.navbar a {
+    color: var(--color5);
+}
+
+.navbar-btn {
+    box-shadow: none;
+    outline: none !important;
+    border: none;
+}
+
+.wrapper {
+    display: flex;
+    width: 100%;
+    align-items: stretch;
+    height: max-content !important;
+}
+
+.imag{
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+    animation: animate 1s ease-in-out infinite alternate;
+}
+
+@keyframes animate{
+    0%{
+        transform: translateY(0);
+    }
+    100%{
+        transform: translateY(-10px);
+    }
+}
+
+.imagen{
+    backdrop-filter: blur(5px);
+}
+
+.imagen h1{
+    font-size: 2em;
+    font-weight: 300;
+    line-height: 1.7em;
+    color: var(--color1);
+}
+
+table{
+    border-collapse: collapse !important;
+    width: 100%;
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    background: transparent !important;
+}
+
+table td, table th{
+    letter-spacing: 2px;
+    font-weight: normal;
+}
+
+table td{
+    font-size: 1.1em;
+    font-weight: 300;
+    line-height: 1.7em;
+    color: var(--) !important;
+
+} 
+
+
+#sidebar {
+    min-width: 250px;
+    max-width: 250px;
+    background: var(--color1);
+    color: #fff;
+    transition: all 0.3s;
+}
+
+#sidebar.active {
+    margin-left: -250px;
+}
+
+#sidebar .sidebar-header {
+    padding: 20px;
+    background: var(--color2);
+}
+
+#sidebar ul.components {
+    padding: 20px 0;
+    border-bottom: 1px solid #47748b;
+}
+
+#sidebar ul p {
+    color: #fff;
+    padding: 10px;
+}
+
+#sidebar ul li a {
+    padding: 10px;
+    font-size: 1.1em;
+    display: block;
+}
+
+#sidebar ul li a:hover {
+    color: var(--color1);
+    background: #fff;
+}
+
+#sidebar ul li.active>a,
+a[aria-expanded="true"] {
+    color: #fff;
+    background: var(--color1);
+}
+
+#sidebar .download:hover {
+    color: #fff;
+    background: var(--color2);
+}
+
+a[data-toggle="collapse"] {
+    position: relative;
+}
+
+.dropdown-toggle::after {
+    display: block;
+    position: absolute;
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%);
+}
+
+ul ul a {
+    font-size: 0.9em !important;
+    padding-left: 30px !important;
+    background: var(--color1);
+}
+
+ul.CTAs {
+    padding: 20px;
+}
+
+ul.CTAs a {
+    text-align: center;
+    font-size: 0.9em !important;
+    display: block;
+    border-radius: 5px;
+    margin-bottom: 5px;
+}
+
+a.download {
+    background: #fff;
+    color: var(--color1);
+}
+
+a.article,
+a.article:hover {
+    background: var(--color3) !important;
+    color: #fff !important;
+}
+
+/* ---------------------------------------------------
+    CONTENT STYLE
+----------------------------------------------------- */
+
+#content {
+    width: 100%;
+    padding: 20px;
+    transition: all 0.3s;
+    height: max-content !important;
+}
+
+/* ---------------------------------------------------
+    MEDIAQUERIES
+----------------------------------------------------- */
+
+@media (max-width: 768px) {
+    #sidebar {
+        margin-left: -250px;
+    }
+    #sidebar.active {
+        margin-left: 0;
+    }
+    #sidebarCollapse span {
+        display: none;
+    }
+}
+
+.container-footer{
+    font-size: 1em;
+    border: 0;
+    background-color: var(--color3) !important;
+    height: max-content;
+    margin: 0;
+    padding: 0  !important;
+}
+
+dialog{
+    width: 300px;
+    border: 0;
+    background-color: transparent;
+    backdrop-filter: blur(5px);
+    height: max-content;
+    margin: 0;
+    padding: 20  !important;
+    border-radius: 10px;
+    transition: all 0.3s;
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+    transform: translate(8px, 8px);
+}
+
+dialog p{
+    font-size: 1.1em;
+    font-weight: 300;
+    line-height: 1.7em;
+    color: var(--color2);
+}
+
+.imagenfondo{
+    background: url(/src/img/bg2.jpg) ;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    transition: all 0.3s;
+    
+}
+
+/* ---------------------------------------------------
+    PLAYLIST STYLE
+----------------------------------------------------- */
+
+.containerPlaylist{
+    background: linear-gradient(45deg, var(--color3), var(--color2));
+    background-repeat: no-repeat;
+}
+
+.playlist{
+    height: 70vh;
+    width: 25vw;
+}
+
+.playlist:hover{
+    cursor: pointer;
+    transform: scale(1.01);
+    border: 3px solid #2A095F;
+}
+
+/* ---------------------------------------------------
+    PLAYERSTATS STYLE
+----------------------------------------------------- */
+
+.playerStats {
+    background-color: var(--color4);
+    
+
+}
+
+.mainStats {
+    margin: 5%;
+}
+
+.mainStats p {
+    color: var(--color2);
+}
+
+#playerInput {
+    margin: 5%;
+}
+
+#searchButton {
+    background-color: var(--color1);
+    color: var(--color5);
+}
+
+#searchButton:hover {
+    background-color: var(--color2);
+}
+
+#searchContainer {
+    margin-bottom: 5%;
+}
+
+#searchContainer label {
+    font-size: 25px;
+}
+
+#searchContainer label {
+    color: var(--color1);
+}
+
+#playerStatsContainer div {
+    margin: 3% 0;
+    border-radius: 5px;
+}
+
+#playerStatsContainer h2 {
+    color: var(--color1);
+}
+
+#stats h3 {
+    background-color: var(--color3);
+    border-radius: 5px 5px 0 0;
+    color: var(--color5);
+}
+
+#stats h4 {
+    color: var(--color1);
+}
+
+#playerName, #playerLevel, #playerMatches {
+    color: var(--color2);
+}
+
+#stats p {
+    font-size: 1.25em;
+}
+
+
+/* ---------------------------------------------------
+    COSMETICS STYLE
+----------------------------------------------------- */
+
+.cosmetics {
+    color: black;
+    background-image: url(/src/img/background.png);
+    backdrop-filter: blur(10px);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+#skins { 
+    backdrop-filter: blur(10px);
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+    padding: 10px;
+}
+
+.skin-card {
+    box-shadow: #a0a0a0 0px 4px 12px;
+    background-color: #fcfcfc;
+    border: 1px solid #a830bd;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    padding: 10px;
+    margin-top: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    transition: 1s;
+}
+
+.skin-card p {
+    color: black;
+    text-align: center;
+}
+
+.skin-card:hover {
+    transform: scale(1.05);
+}
+
+.skin-image {
+    max-width: 200px;
+    max-height: 200px;
+}
+
+#pagination {
+    backdrop-filter: blur(10px);
+    display: flex;
+    list-style: none;
+    padding: 0;
+    justify-content: center;
+}
+
+#pagination a {
+    background-color: #d900ff;
+    color: #f3f3f3;
+    padding: 8px 16px;
+    text-decoration: none;
+    transition: background-color .3s;
+    border: 1px solid #424242;
+    margin: 0 4px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+#pagination a.active {
+    background-color: var(--color1);
+    color: white;
+    border: 1px solid #0f0f0f;
+}
+
+#pagination a:hover:not(.active) {
+    background-color: var(--color1);
+}
+
+#filter-container {
+    backdrop-filter: blur(10px);
+    color: #f3f3f3;
+    padding: 8px 16px;
+    text-decoration: none;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#filter-container select {
+    background-color: #e658ff;
+    color: #181818;
+    padding: 8px 16px;
+    text-decoration: none;
+    border: 1px solid #424242;
+    margin: 0 4px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+#filter-container input {
+    background-color: #ffffff;
+    color: #000000;
+    padding: 8px 16px;
+    text-decoration: none;
+    transition: background-color .3s;
+    border: 1px solid #424242;
+    margin: 0 4px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+/* ---------------------------------------------------
+    SHOP STYLE
+----------------------------------------------------- */
+
+#tienda {
+    backdrop-filter: blur(10px);
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+    padding: 10px;
+}
+
+.item-card {
+    box-shadow: #a0a0a0 0px 4px 12px;
+    background-color: #fcfcfc;
+    border: 1px solid #a830bd;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    padding: 10px;
+    margin-top: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    transition: 1s;
+}
+
+.item-card p {
+    color: black;
+    text-align: center;
+}
+
+.item-card:hover {
+    transform: scale(1.05);
+}
+
+img {
+    max-width: 150px;
+    max-height: 150px;
+}
+
+.container-itemShop {
+    backdrop-filter: blur(10px);
+}
