@@ -105,7 +105,7 @@ fetch(API, {
             
             tableData = document.createElement("td");
             let imagen = document.createElement("img");
-            imagen.src = "/src/img/" + poiEnMayusculas[i].name + ".webp";
+            imagen.src = "../img/" + poiEnMayusculas[i].name + ".webp";
             imagen.classList.add("img-fluid");
             imagen.classList.add("img-thumbnail");
             imagen.width = 200;
