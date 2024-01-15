@@ -58,7 +58,7 @@ fetch(API, {
 
 
         for (let i = 0; i < poiEnMayusculas.length; i++) {
-            let filePath = `/src/txt/${poiEnMayusculas[i].name}.txt`;
+            let filePath = `../txt/${poiEnMayusculas[i].name}.txt`;
 
 
 
