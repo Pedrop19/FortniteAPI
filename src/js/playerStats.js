@@ -98,4 +98,3 @@ function displayPlayerStats(data) {
     squadKDElement.textContent = `${data.data.stats.all.squad.kd}`;
 }
 
-getFortnitePlayerStats(playerName, apiKey);
