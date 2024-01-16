@@ -24,7 +24,7 @@
 </head>
 
 <body class="p-0 m-0">
-    <div class="wrapper">
+    <div class="wrapper playerStats">
         <nav id="sidebar" class="active">
             <div class="sidebar-header d-flex justify-content-between">
                 <h3>Fortnite API</h3>
@@ -91,14 +91,14 @@
                 </div>
             </nav>
 
-            <main>
-                <div class="col-4 container-fluid text-center" id="searchContainer">
-                    <label for="playerInput" class="form-label">Search Player</label>
+            <div id="playerStatsMain">
+                <div class="col-4 container-fluid text-center " id="searchContainerPlayerStats">
+                    <label for="playerInput" class="form-label mt-5">Search Player</label>
                     <input type="text" class="form-control mx-2" aria-describedby="helpId" placeholder="Id or Name"
                         id="playerInput" />
-                    <button class="btn" id="searchButton">Search</button>
+                    <button class="btn" id="searchButtonPlayerStats">Search</button>
                 </div>
-                <div id="playerStatsContainer" class="hidden container col-12 text-center">
+                <div id="playerStatsContainer" class="hiddenPlayerStats container col-12 text-center">
                     <div class="row">
                         <div class="col-4">
                             <h2>Name</h2>
@@ -113,7 +113,7 @@
                             <h4 id="playerMatches"></h4>
                         </div>
                     </div>
-                    <div id="stats">
+                    <div id="playerStatsObtained">
                         <div class="row" style="background-color: #FBEFFF;">
                             <h3 class="p-2">Summary Statistics</h3>
                             <div class="col-3">
@@ -192,8 +192,7 @@
                         </div>
                     </div>
                 </div>
-            </main>
-
+            </div>
         </div>
     </div>
 
