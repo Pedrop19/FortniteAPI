@@ -1,7 +1,7 @@
 const API = "https://fortnite-api.com/v2/stats/br/v2/?name=";
 const apiKey = '27e7cbc4-05e3-4e65-90a3-af534dab3ead';
 
-const searchButton = document.getElementById('searchButton');
+const searchButtonPlayerStats = document.getElementById('searchButtonPlayerStats');
 const playerStatsContainerElement = document.getElementById('playerStatsContainer');
 const playerNameInput = document.getElementById('playerInput');
 
@@ -30,12 +30,12 @@ const squadKillsElement = document.getElementById('squadKills');
 const squadKDElement = document.getElementById('squadKD');
 
 // Looks for a player name given by the user in the API
-searchButton.addEventListener('click', function () {
+searchButtonPlayerStats.addEventListener('click', function () {
     const playerName = playerNameInput.value.trim();
 
     if (playerName !== '') {
         getFortnitePlayerStats(playerName, apiKey);
-        playerStatsContainerElement.classList.remove('hidden');
+        playerStatsContainerElement.classList.remove('hiddenPlayerStats');
     } else {
         console.error('Please, enter a valid player name.');
     }
@@ -44,7 +44,7 @@ searchButton.addEventListener('click', function () {
 // Adds an event listener to make enter key do the same function as clicking on search button
 playerNameInput.addEventListener('keydown', function (event) {
     if (event.key === 'Enter') {
-        searchButton.click(); 
+        searchButtonPlayerStats.click(); 
     }
 });
 
